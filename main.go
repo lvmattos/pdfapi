@@ -34,7 +34,7 @@ func toPdf(page string) ([]byte, error) {
 	}
 	pdfg.Dpi.Set(72)
 	pdfg.NoCollate.Set(false)
-	pdfg.PageSize.Set(wkhtmltopdf.PageSizeA4)
+	pdfg.PageSize.Set(wkhtmltopdf.PageSizeLetter)
 	pdfg.AddPage(wkhtmltopdf.NewPageReader(strings.NewReader(page)))
 	err = pdfg.Create()
 	if err != nil {
